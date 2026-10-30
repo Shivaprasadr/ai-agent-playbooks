@@ -1,0 +1,29 @@
+name: Playbook feedback
+description: Suggest an improvement to a rule, prompt, example, or acceptance scenario.
+title: "[Feedback]: "
+labels:
+  - feedback
+body:
+  - type: markdown
+    attributes:
+      value: "Please share sanitized examples only. Do not include credentials, private URLs, personal workstation secrets, or corporate information."
+  - type: input
+    id: location
+    attributes:
+      label: Relevant file or topic
+    validations:
+      required: true
+  - type: textarea
+    id: suggestion
+    attributes:
+      label: Suggested change
+      description: What should change and why?
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Supporting evidence
+      description: Include reproduction steps or evidence status; mark unverified claims.
+    validations:
+      required: false

@@ -1,0 +1,53 @@
+name: Hardware profile or result
+description: Report a sanitized hardware/model/runtime configuration and validation result.
+title: "[Profile]: "
+labels:
+  - hardware-profile
+body:
+  - type: markdown
+    attributes:
+      value: "Use profiles/TEMPLATE.md. Never include credentials, private URLs, hostnames, usernames, serial numbers, or corporate information. Untested results must be labelled Experimental / Untested; do not invent benchmarks."
+  - type: input
+    id: model
+    attributes:
+      label: Exact model identifier
+      description: Use the exact identifier if known; otherwise state unknown.
+    validations:
+      required: true
+  - type: input
+    id: engine
+    attributes:
+      label: Inference engine and version
+    validations:
+      required: true
+  - type: textarea
+    id: hardware
+    attributes:
+      label: Sanitized hardware class
+      description: GPU class/VRAM and system RAM; omit unique identifiers.
+    validations:
+      required: true
+  - type: dropdown
+    id: status
+    attributes:
+      label: Evidence status
+      options:
+        - Experimental / Untested
+        - Community Reported
+        - Reproduced
+    validations:
+      required: true
+  - type: textarea
+    id: procedure
+    attributes:
+      label: Test procedure and settings
+      description: Include relevant agent, context, quantization, and acceptance scenarios when known.
+    validations:
+      required: true
+  - type: textarea
+    id: results
+    attributes:
+      label: Observed results and limitations
+      description: Separate observations from measured results; include no made-up values.
+    validations:
+      required: true

@@ -1,0 +1,36 @@
+name: Bug report
+description: Report an issue with a rule, prompt, test, or documentation page.
+title: "[Bug]: "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: "Do not include credentials, private URLs, corporate information, personal workstation secrets, or sensitive logs."
+  - type: input
+    id: location
+    attributes:
+      label: File or playbook
+      description: Link or path to the affected item.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behaviour
+    validations:
+      required: true
+  - type: textarea
+    id: observed
+    attributes:
+      label: Observed behaviour
+      description: Include sanitized steps and evidence. Mark unverified details.
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Relevant environment
+      description: Include only sanitized agent/runtime/model details that matter.
+    validations:
+      required: false
